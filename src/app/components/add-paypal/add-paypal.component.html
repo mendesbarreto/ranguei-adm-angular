@@ -1,0 +1,17 @@
+<a [routerLink]="['/settings']">Back</a>
+<br />
+<h2 class="page-header">Paypal Configuration</h2>
+<form (submit)="onPaypalConfiguration()">
+  <div class="form-group">
+    <label>PayPal Environment Sandbox</label>
+    <input class="form-control" type="text" [(ngModel)]="sandbox" name="sandbox" required>
+  </div>
+
+  <div class="form-group">
+    <label>PayPal Environment Production</label>
+    <input class="form-control" type="text" [(ngModel)]="production" name="production">
+  </div>
+  
+  
+  <input type="submit" value="submit" class="btn btn-success">
+</form>

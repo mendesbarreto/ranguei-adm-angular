@@ -1,0 +1,122 @@
+<a [routerLink]="['/orders']">Back</a>
+<br />
+<h2 class="page-header">Update Order Status</h2>
+
+<form (submit)="onStatusOrderSubmit()">
+
+<ul class = "list-group" *ngIf = "order_details">
+
+	<div class="row" >
+		  <div class="col-xs-12 col-md-12" >
+		  
+		  <div class="panel panel-default" >
+			  <!-- Table -->
+			  <table class="table">
+				<tr>
+					
+					<td style = "width:15%;">
+						<b style = "text-align: center;">Product Image</b>
+					</td>
+					<td style = "width:15%;">
+						<b style = "text-align: center;">Customer Name</b>
+					</td>
+					
+			
+					
+					<td style = "width:10%;">					
+						<b style = "text-align: center;">Total</b>
+					</td>
+					<td style = "width:10%;">					
+						<b style = "text-align: center;">Payment type</b>
+					</td>
+					
+					<td style = "width:20%;">					
+						<b style = "text-align: center;">Status</b>
+					</td>
+					
+					<td style = "width:10%;">
+						<b style = "text-align: center;">Date</b>
+					</td>
+
+					<td style = "width:20%;text-align:center;">
+						<b style = "text-align: center;">Action</b>
+					</td>					
+					
+					
+				</tr>
+			  </table>
+			  
+			  
+			  <table class="table">
+				<tr>
+					
+					<td style = "width:15%;">
+						<img style="width:100px;height:40px;" class="thumbnail" src="{{order_details.items[0].image}}">
+					</td>
+				
+					
+					<td style = "width:15%;">					
+						<p style = "text-align: left;">{{order_details.customerDetails.displayName}}</p>
+					</td>
+					
+					
+					
+					
+					<td style = "width:10%;">					
+						<p style = "text-align: left;">{{order_details.total}}$</p>
+					</td>
+					
+					<td style = "width:10%;">
+						<p style = "text-align: left;">{{order_details.payments.PaymentType}}</p>
+					</td>
+					
+					<td style = "width:20%;">					
+								
+								<select class="form-control" type="text" [(ngModel)]="status" name="status">
+								  <option value="Queued">Queued</option>
+								  <option value="Delivered">Delivered</option>
+								  <option value="Canceled">Canceled</option>
+								</select>
+								<p style = "text-align: center;">{{order_details.status}}</p>
+								
+									
+
+								
+							
+					</td>
+					
+					<td style = "width:10%;">
+						<p style = "text-align: center;">{{order_details.timeStamp | date}}</p>
+					</td>
+
+					<td style = "width:20%;text-align:center;">
+						<input type="submit" value="submit" class="btn btn-success">
+					</td>					
+					
+					
+				</tr>
+			  </table>
+		</div>
+				
+				
+				
+				
+				
+				
+				
+			
+				
+				
+		  </div>
+	</div>
+	
+	
+
+<!---
+	<li class = "list-group-item" *ngFor="let restaurant of restaurants">
+		<a [routerLink]="['/restaurant-details/'+restaurant.$key]">{{restaurant.title}}</a>
+	</li>
+	
+-->	
+</ul>
+</form>

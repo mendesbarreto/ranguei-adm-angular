@@ -1,0 +1,121 @@
+<div *ngIf = "order_details">
+
+	<a [routerLink] = "['/orders']">Go back </a>
+	<br>
+	
+	<h2 class ="page header">EDIT EXTRA ITEMS </h2>
+
+	<div class = "row">
+		<div class = "col-md-4">
+
+		
+		</div>
+		
+		
+		 <table class="table">
+				<tr>
+					
+		
+					
+					<td style = "width:20%;">
+						<b style = "text-align: center;">Extra Image</b>
+					</td>
+					
+				
+					
+					<td style = "width:20%;">					
+						<b style = "text-align: center;">Extra Item Name</b>
+					</td>
+					
+				
+					<td style = "width:20%;">
+						<b style = "text-align: center;">Extra Selected</b>
+					</td>
+	
+	
+				<td style = "width:20%;">
+						<b style = "text-align: center;">Price</b>
+					</td>
+					
+					
+						<td style = "width:20%;">
+						<b style = "text-align: center;">Action</b>
+					</td>
+
+
+
+
+					
+				</tr>
+				
+			
+				
+			  </table>
+		
+		<div >
+		
+		<div style = "background-color:#00bfff;color:white;width:100%;">
+		 
+		 </div>
+		
+		 <table class="table">
+		 
+		 
+		 
+				<tr>
+					
+					<td style = "width:20%;">
+						<img style="width:100px;height:60px;" class="thumbnail" src="https://firebasestorage.googleapis.com/v0/b/onesignalexample-f359b.appspot.com/o/extra.png?alt=media&token=d20d367f-7c61-477e-a55a-d2b39e93ec02">
+					</td>
+					
+					<td style = "width:20%;">
+						
+						  <input class="form-control" type="text" [(ngModel)]="order_details.name" name="name" required>
+					</td>
+					
+				
+					
+					<td style = "width:20%;">					
+						
+						
+						<input class="form-control" type="text" [(ngModel)]="order_details.selected" name="selected" required>
+					</td>
+					
+				
+					<td style = "width:20%;">
+						
+						
+						<input class="form-control" type="text" [(ngModel)]="order_details.value" name="selected" required> 
+					</td>
+					
+					<td style = "width:20%;">
+												
+						
+		
+						
+						<a (click)="save(order_details.$key)" class = "btn btn-danger" >Save</a>
+						
+						
+						
+					</td>
+					
+				
+	
+
+
+
+					
+				</tr>
+				
+			
+				
+			  </table>
+			</div>  
+			  
+
+	</div>
+
+
+</div>
+
+

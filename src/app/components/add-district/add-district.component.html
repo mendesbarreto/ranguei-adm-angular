@@ -1,0 +1,168 @@
+<!----
+
+<a [routerLink]="['/settings']">Back</a>
+<br />
+<h2 class="page-header">Restaurant District</h2>
+
+
+<button class="btn btn-danger" style = "width:100%;margin-top:10px;">
+	<a [routerLink]="['/add-new-district']" style = "text-align: center;color:white;">+ Add New District</a>
+</button>
+
+<ul class = "list-group">
+
+	<div class="row" >
+
+	
+		  <div class="col-xs-12 col-md-3" *ngFor="let district of districts">
+		  
+				<h2>		  
+				
+				
+				<a [routerLink]="['/edit-district/'+district.$key]" style = "text-align: center;color:black;">{{district.name}}</a>
+				</h2>
+				
+				<img style="width:100%;height:150px;" class="thumbnail" src="https://firebasestorage.googleapis.com/v0/b/onesignalexample-f359b.appspot.com/o/district.png?alt=media&token=b7cbb172-69d8-437e-b6f5-2d773203e093">
+					
+				<button class="btn btn-success" style = "width:100%">
+				<a [routerLink]="['/edit-district/'+district.$key]" style = "text-align: center;color:white;">Edit City</a>
+				
+				
+				</button>
+					
+				<button (click)="deleteDistrict(district.$key)" class="btn btn-success" style = "width:100%;margin-top:10px;">
+				<a  style = "text-align: center;color:white;">Delete</a>
+				</button>
+				
+		  </div>
+	</div>
+
+</ul>
+
+-->
+<div *ngIf = "districts">
+
+	<a [routerLink] = "['/orders']">Go back </a>
+	<br>
+	
+	<h2 class ="page header">Restaurant District </h2>
+
+	<div class = "row">
+		<div class = "col-md-4">
+
+		
+		</div>
+		
+		
+		 <table class="table">
+				<tr>
+					
+		
+					
+					<td style = "width:20%;">
+						<b style = "text-align: center;">District Image</b>
+					</td>
+					
+				
+					
+					<td style = "width:20%;">					
+						<b style = "text-align: center;">District ID</b>
+					</td>
+					
+				
+					<td style = "width:20%;">
+						<b style = "text-align: center;">District Name</b>
+					</td>
+	
+					
+					
+						<td style = "width:30%;">
+						<b style = "text-align: center;">Action</b>
+					</td>
+
+
+
+
+					
+				</tr>
+				
+			
+				
+			  </table>
+		
+		<div *ngFor="let item of districts">
+		
+		<div style = "background-color:#00bfff;color:white;width:100%;">
+		 
+		 </div>
+		
+		 <table class="table">
+		 
+		 
+		 
+				<tr>
+					
+					<td style = "width:20%;">
+						<img style="width:100px;height:60px;" class="thumbnail" src="https://firebasestorage.googleapis.com/v0/b/onesignalexample-f359b.appspot.com/o/district.png?alt=media&token=b7cbb172-69d8-437e-b6f5-2d773203e093">
+					</td>
+					
+					<td style = "width:20%;">
+						<p style = "text-align: left;">{{item.$key}}</p>
+					</td>
+					
+				
+					
+					<td style = "width:20%;">					
+						<p style = "text-align: left;">{{item.name}}</p>
+					</td>
+					
+
+					
+					<td style = "width:30%;">
+							<!---					
+						<a [routerLink]="['/edit-extra-food/' + item.$key]" class = "btn btn-warning" >Edit</a>
+						---->
+		
+		<!--
+						<a (click)="onExtraItemEdit(item.$key)" class = "btn btn-warning" >Edit</a>
+						
+						<a (click)="onExtraItemDelete(item.$key)" class = "btn btn-danger" >Delete</a>
+						-->
+				<button class="btn btn-danger">
+					<a [routerLink]="['/add-new-district']" style = "text-align: center;color:white;">Add District</a>
+				</button>				
+
+				
+				<button class="btn btn-warning" >
+				<a [routerLink]="['/edit-district/'+item.$key]" style = "text-align: center;color:white;">Edit District</a>
+				
+				
+				</button>
+					
+				<button (click)="deleteDistrict(item.$key)" class="btn btn-success" >
+				<a  style = "text-align: center;color:white;">Delete</a>
+				</button>
+						
+						
+						
+					</td>
+					
+				
+	
+
+
+
+					
+				</tr>
+				
+			
+				
+			  </table>
+			</div>  
+			  
+
+	</div>
+
+
+</div>
+

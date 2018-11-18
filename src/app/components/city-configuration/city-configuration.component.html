@@ -1,0 +1,170 @@
+<!----
+<a [routerLink]="['/settings']">Back</a>
+<br />
+<h2 class="page-header">Restaurant City</h2>
+
+
+<button class="btn btn-danger" style = "width:100%;margin-top:10px;">
+	<a [routerLink]="['/add-new-city']" style = "text-align: center;color:white;">+ Add New City</a>
+</button>
+
+<ul class = "list-group">
+
+	<div class="row" >
+
+	
+		  <div class="col-xs-12 col-md-3" *ngFor="let city of cities">
+		  
+				<h2>		  
+				
+				
+				<a [routerLink]="['/edit-city/'+city.$key]" style = "text-align: center;color:black;">{{city.name}}</a>
+				</h2>
+				
+				<img style="width:100%;height:150px;" class="thumbnail" src="https://firebasestorage.googleapis.com/v0/b/onesignalexample-f359b.appspot.com/o/cities.jpg?alt=media&token=d4150bd4-1c2f-4808-9b60-e61310f17cb2">
+					
+				<button class="btn btn-success" style = "width:100%">
+				<a [routerLink]="['/edit-city/'+city.$key]" style = "text-align: center;color:white;">Edit City</a>
+				
+				
+				</button>
+					
+				<button (click)="deleteCity(city.$key)" class="btn btn-success" style = "width:100%;margin-top:10px;">
+				<a  style = "text-align: center;color:white;">Delete</a>
+				</button>
+				
+		  </div>
+	</div>
+
+</ul>
+--->
+
+<div *ngIf = "cities">
+
+	<a [routerLink] = "['/orders']">Go back </a>
+	<br>
+	
+	<h2 class ="page header">Restaurant City </h2>
+
+	<div class = "row">
+		<div class = "col-md-4">
+
+		
+		</div>
+		
+		
+		 <table class="table">
+				<tr>
+					
+		
+					
+					<td style = "width:20%;">
+						<b style = "text-align: center;">City Image</b>
+					</td>
+					
+				
+					
+					<td style = "width:20%;">					
+						<b style = "text-align: center;">City ID</b>
+					</td>
+					
+				
+					<td style = "width:20%;">
+						<b style = "text-align: center;">City Name</b>
+					</td>
+	
+					
+					
+						<td style = "width:30%;">
+						<b style = "text-align: center;">Action</b>
+					</td>
+
+
+
+
+					
+				</tr>
+				
+			
+				
+			  </table>
+		
+		<div *ngFor="let item of cities">
+		
+		<div style = "background-color:#00bfff;color:white;width:100%;">
+		 
+		 </div>
+		
+		 <table class="table">
+		 
+		 
+		 
+				<tr>
+					
+					<td style = "width:20%;">
+						<img style="width:100px;height:60px;" class="thumbnail" src="https://firebasestorage.googleapis.com/v0/b/onesignalexample-f359b.appspot.com/o/cities.jpg?alt=media&token=d4150bd4-1c2f-4808-9b60-e61310f17cb2">
+					</td>
+					
+					<td style = "width:20%;">
+						<p style = "text-align: left;">{{item.$key}}</p>
+					</td>
+					
+				
+					
+					<td style = "width:20%;">					
+						<p style = "text-align: left;">{{item.name}}</p>
+					</td>
+					
+
+					
+					<td style = "width:30%;">
+							<!---					
+						<a [routerLink]="['/edit-extra-food/' + item.$key]" class = "btn btn-warning" >Edit</a>
+						---->
+		
+		<!--
+						<a (click)="onExtraItemEdit(item.$key)" class = "btn btn-warning" >Edit</a>
+						
+						<a (click)="onExtraItemDelete(item.$key)" class = "btn btn-danger" >Delete</a>
+						-->
+				
+				<button class="btn btn-danger">
+					<a [routerLink]="['/add-new-city']" style = "text-align: center;color:white;">Add City</a>
+				</button>
+								
+				<button class="btn btn-warning" >
+				<a [routerLink]="['/edit-city/'+item.$key]" style = "text-align: center;color:white;">Edit City</a>
+				
+				
+				</button>
+					
+				<button (click)="deleteCity(item.$key)" class="btn btn-success" >
+				<a  style = "text-align: center;color:white;">Delete</a>
+				</button>
+						
+						
+						
+					</td>
+					
+				
+	
+
+
+
+					
+				</tr>
+				
+			
+				
+			  </table>
+			</div>  
+			  
+
+	</div>
+
+
+</div>
+
+
+
+

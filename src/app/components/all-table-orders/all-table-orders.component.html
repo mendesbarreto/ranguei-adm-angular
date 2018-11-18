@@ -1,0 +1,148 @@
+<ul class = "list-group">
+
+	<div class="row" >
+		  <div class="col-xs-12 col-md-12" >
+		  
+		  <div class="panel panel-default" >
+			  <!-- Table -->
+			  <table class="table">
+				<tr>
+					
+					<td style = "width:10%;">
+						<b style = "text-align: center;">Restaurant Image</b>
+					</td>
+					
+					<td style = "width:15%;">					
+						<b style = "text-align: center;">Restaurant Name</b>
+					</td>
+					
+					
+					<td style = "width:15%;">					
+						<b style = "text-align: center;">Table Order Date</b>
+					</td>
+					
+					
+					
+				
+					<td style = "width:10%;">					
+						<b style = "text-align: center;">Table Order Time</b>
+					</td>
+					
+					<td style = "width:10%;">					
+						<b style = "text-align: center;">Person Quantity</b>
+					</td>
+					
+					<td style = "width:10%;">
+						<b style = "text-align: center;">Status</b>
+					</td>
+					
+					<td style = "width:10%;">					
+						<b style = "text-align: center;">Order Date</b>
+					</td>
+
+					<td style = "width:20%;text-align:center;">
+						<b style = "text-align: center;">Action</b>
+					</td>					
+					
+					
+				</tr>
+			  </table>
+			  
+			  
+			  
+			  <table class="table" *ngFor="let tableOrder of allTableOrders">
+			  
+				<tr>
+					
+					<td style = "width:10%;">
+						<img style="width:100px;height:60px;" class="thumbnail" src="{{tableOrder.restaurant_firebase_url}}">
+					</td>
+					
+					<td style = "width:15%;">
+						<p style = "text-align: center;">{{tableOrder.restaurant_title}}</p>
+					</td>
+					
+					
+					<td style = "width:15%;">
+						<p style = "text-align: center;">{{tableOrder.date}}</p>
+					</td>
+					
+				
+					
+					<td style = "width:10%;">					
+						<p style = "text-align: center;">{{tableOrder.time}}</p>
+					</td>
+					
+					<td style = "width:10%;">					
+						<b style = "text-align: center;">{{tableOrder.person}}</b>
+					</td>
+					
+					
+					<td style = "width:10%;">
+						<p style = "text-align: center;">{{tableOrder.status}}</p>
+					</td>
+					
+						<td style = "width:10%;">					
+						<b style = "text-align: center;">{{tableOrder.timeStamp | date}}</b>
+					</td>
+
+					<td style = "width:20%;text-align:center;">
+						<a class = "btn btn-default" [routerLink] = "['/table-order-detail/'+tableOrder.$key]">View</a>
+					</td>	
+					<!---
+					
+					<td style = "width:20%;">					
+						<p style = "text-align: center;">{{order.user_name}}</p>
+					</td>
+					
+					<td style = "width:5%;">					
+						<p style = "text-align: center;">{{order.item_qty}}</p>
+					</td>
+					<td style = "width:5%;">					
+						<p style = "text-align: center;">{{order.product_total_price}}$</p>
+					</td>
+					
+					<td style = "width:10%;">					
+						<p style = "text-align: center;color:green;">{{order.status}} </p>
+						<p style ="text-align: center;color:red;">{{order.checked}}</p>
+					</td>
+					
+					<td style = "width:10%;">
+						<p style = "text-align: center;">{{order.order_date_time}}</p>
+					</td>
+
+					<td style = "width:20%;text-align:center;">
+						<a class = "btn btn-default" [routerLink] = "['/order-details/'+order.$key]">View</a>
+					</td>			
+				
+					--->
+					
+				</tr>
+				
+			  </table>
+			  
+			  
+		</div>
+				
+				
+				
+				
+				
+				
+				
+			
+				
+				
+		  </div>
+	</div>
+	
+	
+
+<!---
+	<li class = "list-group-item" *ngFor="let restaurant of restaurants">
+		<a [routerLink]="['/restaurant-details/'+restaurant.$key]">{{restaurant.title}}</a>
+	</li>
+	
+-->	
+</ul>
+

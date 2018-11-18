@@ -1,0 +1,193 @@
+<div *ngIf = "table_order_details">
+
+	<a [routerLink] = "['/orders']">Go back </a>
+	<br>
+	
+	<h2 class ="page header">TABLE ORDER DETAILS <small>{{table_order_details.timeStamp | date}}</small></h2>
+	
+	<!---
+	<h2 class ="page header"><small><b>{{order_details.user_name}}</b></small>    <small>  {{order_details.restaurant_name}}</small></h2>
+	--->
+	<div class = "row">
+		<div class = "col-md-4">
+		<!--
+			<img style="width:100%;height:300px;" class="thumbnail" src="{{order_details.product_firebase}}">
+			-->
+		
+		</div>
+		
+		
+		 <table class="table">
+				<tr>
+					
+		
+					
+					<td style = "width:20%;">
+						<b style = "text-align: center;">Restaurant Image</b>
+					</td>
+					
+				
+					
+					<td style = "width:20%;">					
+						<b style = "text-align: center;">Restaurant Name</b>
+					</td>
+					
+				
+					<td style = "width:20%;">
+						<b style = "text-align: center;">Date</b>
+					</td>
+	
+	
+				<td style = "width:20%;">
+						<b style = "text-align: center;">Time</b>
+					</td>
+					
+					<td style = "width:20%;">
+						<b style = "text-align: center;">Person Number</b>
+					</td>
+
+
+
+					
+				</tr>
+				
+			
+				
+			  </table>
+			  
+			  <div>
+		
+		<div style = "background-color:#00bfff;color:white;width:100%;">
+		 
+		 </div>
+		
+		 <table class="table">
+		 
+		 
+		 
+				<tr>
+					
+					<td style = "width:20%;">
+						<img style="width:100px;height:60px;" class="thumbnail" src="{{table_order_details.restaurant_firebase_url}}">
+					</td>
+					
+					<td style = "width:20%;">
+						<p style = "text-align: left;">{{table_order_details.restaurant_title}}</p>
+					</td>
+					
+				
+					
+					<td style = "width:20%;">					
+						<p style = "text-align: left;">{{table_order_details.date}}</p>
+					</td>
+					
+				
+					<td style = "width:20%;">
+						<p style = "text-align: left;">{{table_order_details.time}}</p>
+					</td>
+	
+	
+				<td style = "width:20%;">
+						<p style = "text-align: left;">{{table_order_details.person}}</p>
+					</td>
+
+
+					
+				</tr>
+				
+			
+				
+			  </table>
+			</div>
+
+
+	 <h2 class ="page header">CUSTOMER DETAILS </h2> 
+			 
+			 <table class="table">
+				<tr>
+					
+		
+					
+					<td style = "width:20%;">
+						<b style = "text-align: center;">Customer name</b>
+					</td>
+					
+				
+					
+					<td style = "width:20%;">					
+						<b style = "text-align: center;">Email</b>
+					</td>
+					
+				
+					<td style = "width:20%;">
+						<b style = "text-align: center;">Address</b>
+					</td>
+	
+	
+				<td style = "width:20%;">
+						<b style = "text-align: center;">Phone number</b>
+					</td>
+					
+					<td style = "width:20%;">
+						<b style = "text-align: center;">Joined Date</b>
+					</td>
+
+
+
+					
+				</tr>
+				
+			
+				
+			  </table>
+			 
+			  
+			  <table class="table" *ngIf = "user_details">
+				<tr>
+					
+		
+					
+					<td style = "width:20%;">
+						<p style = "text-align: left;">{{user_details.displayName}}</p>
+					</td>
+					
+				
+					
+					<td style = "width:20%;">					
+						<p style = "text-align: left;">{{user_details.email}}</p>
+					</td>
+					
+				
+					<td style = "width:20%;">
+						<p style = "text-align: left;">{{user_details.address}}</p>
+					</td>
+	
+	
+				<td style = "width:20%;">
+						<p style = "text-align: left;">{{user_details.phone}}</p>
+					</td>
+					
+					<td style = "width:20%;">
+						<p style = "text-align: left;">{{user_details.timeStamp | date}}</p>
+					</td>
+
+
+
+					
+				</tr>
+				
+			
+				
+			  </table>			
+
+	
+
+		
+		<a class = "btn btn-default" [routerLink] = "['/table-update-status/' + table_order_id]">Change Status</a>
+		<a (click) = "onOrderDelete()" class = "btn btn-danger" >Delete</a>
+	</div>
+
+
+</div>
+
+

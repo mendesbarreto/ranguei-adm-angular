@@ -1,0 +1,43 @@
+ <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Multi Restaurant</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-left">
+            <li ><a [routerLink]="['/']">Home</a></li>
+			<!--
+            <li *ngIf="(af.auth | async)"><a [routerLink]="['/listings']">Listings</a></li
+			-->			
+			<li *ngIf="(af.auth | async)"><a [routerLink]="['/restaurants']">Restaurants</a></li>
+			<li *ngIf="(af.auth | async)"><a [routerLink]="['/category']">Category</a></li>
+			<li *ngIf="(af.auth | async)"><a [routerLink]="['/items']">Items</a></li>
+			<li *ngIf="(af.auth | async)"><a [routerLink]="['/orders']">Orders</a></li>
+			<li *ngIf="(af.auth | async)"><a [routerLink]="['/all-table-order']">Table Order</a></li>
+			<!--
+			<li *ngIf="(af.auth | async)"><a [routerLink]="['/add-listing']">Add Listings</a></li>
+			-->			
+			<li *ngIf="(af.auth | async)"><a [routerLink]="['/add-restaurant']">Add Restaurant</a></li>
+			<li *ngIf="(af.auth | async)"><a [routerLink]="['/add-category']">Add Category</a></li>
+			<li *ngIf="(af.auth | async)"><a [routerLink]="['/add-item']">Add Item</a></li>
+			
+			<li *ngIf="(af.auth | async)"><a [routerLink]="['/settings']">Settings</a></li>
+			
+			
+          </ul>
+		  <ul class="nav navbar-nav navbar-right">
+            <li *ngIf="!(af.auth | async)"><a (click)="login()" >Login</a></li>
+			<li *ngIf="(af.auth | async)"><a (click)="logout()" >Logout</a></li>
+          </ul>
+		  
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+	

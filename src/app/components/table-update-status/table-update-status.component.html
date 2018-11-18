@@ -1,0 +1,130 @@
+<a [routerLink]="['/orders']">Back</a>
+<br />
+<h2 class="page-header">Update Order Status</h2>
+
+<form (submit)="onStatusTableOrderSubmit()">
+
+<ul class = "list-group" *ngIf = "table_order_details">
+
+	<div class="row" >
+		  <div class="col-xs-12 col-md-12" >
+		  
+		  <div class="panel panel-default" >
+			  <!-- Table -->
+			  <table class="table">
+				<tr>
+					
+					<td style = "width:15%;">
+						<b style = "text-align: center;">Restaurant Image</b>
+					</td>
+					<td style = "width:15%;">
+						<b style = "text-align: center;">Restaurant Name</b>
+					</td>
+					
+			
+					
+					<td style = "width:10%;">					
+						<b style = "text-align: center;">Date</b>
+					</td>
+					<td style = "width:10%;">					
+						<b style = "text-align: center;">Time</b>
+					</td>
+					
+					<td style = "width:10%;">					
+						<b style = "text-align: center;">Person Quantity</b>
+					</td>
+					
+					<td style = "width:15%;">					
+						<b style = "text-align: center;">Status</b>
+					</td>
+					
+					<td style = "width:10%;">
+						<b style = "text-align: center;">Date</b>
+					</td>
+
+					<td style = "width:15%;text-align:center;">
+						<b style = "text-align: center;">Action</b>
+					</td>					
+					
+					
+				</tr>
+			  </table>
+			  
+			  
+			  <table class="table">
+				<tr>
+					
+					<td style = "width:15%;">
+						<img style="width:100px;height:40px;" class="thumbnail" src="{{table_order_details.restaurant_firebase_url}}">
+					</td>
+				
+					
+					<td style = "width:15%;">					
+						<p style = "text-align: left;">{{table_order_details.restaurant_title}}</p>
+					</td>
+					
+					
+					
+					
+					<td style = "width:10%;">					
+						<p style = "text-align: left;">{{table_order_details.date}}</p>
+					</td>
+					
+					<td style = "width:10%;">
+						<p style = "text-align: left;">{{table_order_details.time}}</p>
+					</td>
+					
+					<td style = "width:10%;">
+						<p style = "text-align: left;">{{table_order_details.person}}</p>
+					</td>
+					
+					<td style = "width:15%;">					
+								
+								<select class="form-control" type="text" [(ngModel)]="status" name="status">
+								  <option value="Queued">Queued</option>
+								  <option value="Accepted">Accepted</option>
+								  <option value="Declined">Declined</option>
+								</select>
+								<p style = "text-align: center;">{{table_order_details.status}}</p>
+								
+									
+
+								
+							
+					</td>
+					
+					<td style = "width:10%;">
+						<p style = "text-align: center;">{{table_order_details.timeStamp | date}}</p>
+					</td>
+
+					<td style = "width:15%;text-align:center;">
+						<input type="submit" value="submit" class="btn btn-success">
+					</td>					
+					
+					
+				</tr>
+			  </table>
+		</div>
+				
+				
+				
+				
+				
+				
+				
+			
+				
+				
+		  </div>
+	</div>
+	
+	
+
+<!---
+	<li class = "list-group-item" *ngFor="let restaurant of restaurants">
+		<a [routerLink]="['/restaurant-details/'+restaurant.$key]">{{restaurant.title}}</a>
+	</li>
+	
+-->	
+</ul>
+</form>

@@ -1,0 +1,31 @@
+<ul class = "list-group">
+
+	<form id = "filter">
+		
+		
+			<input type = "text" [(ngModel)]="term" name ="term"/>
+			<label>SEARCH BY ITEM NAME: </label>
+		
+			
+		</form>
+
+
+	<div class="row" >
+		  <div class="col-xs-12 col-md-3" *ngFor="let item of items | filterItem:term">
+				
+				<a [routerLink]="['/item-details/'+item.$key]" style = "text-align: center;"><h4>{{item.name}}</h4></a>
+				
+				<img style="width:100%;height:150px;" class="thumbnail" src="{{item.image_firebase_url}}">
+				
+		  </div>
+		  
+	</div>
+	
+<!---	
+	<li class = "list-group-item" *ngFor="let item of items">
+		<a [routerLink]="['/item-details/'+item.$key]">{{item.name}}</a>
+	</li>
+--->
+
+</ul>
+

@@ -1,0 +1,30 @@
+<div *ngIf = "category_details">
+
+	<a [routerLink] = "['/category']">Go back </a>
+	<br>
+	
+	
+	<h2 class ="page header">{{category_details.cat_name}} <small>Restaurant category</small></h2>
+	<div class = "row">
+		<div class = "col-md-4">
+			<img style="width:100%" class="thumbnail" src="{{category_details.firebase_url}}">
+		
+		</div>
+		
+		<div class = "col-md-8">
+			<ul class ="list-group">
+				<li class = "list-group-item">Category name: <b>{{category_details.cat_name}}</b></li>
+				<li class = "list-group-item">Category details: <b>{{category_details.cat_id}}</b></li>
+				
+			
+				
+			</ul>
+		
+		</div>
+		
+		<a class = "btn btn-default" [routerLink] = "['/edit-category/' + category_details.$key]">Edit</a>
+		<a (click) = "onCategoryDelete()" class = "btn btn-danger" >Delete</a>
+	</div>
+
+
+</div>

@@ -1,0 +1,10 @@
+<a [routerLink]="['/items']">Back</a>
+<br />
+<h2 class="page-header">Edit Street</h2>
+<form (submit)="onStreetEditSubmit()">
+  <div class="form-group">
+    <label>Street Name</label>
+    <input class="form-control" type="text" [(ngModel)]="streetName" name="streetName" required> 
+	</div>	
+  <input type="submit" value="submit" class="btn btn-success">
+</form>

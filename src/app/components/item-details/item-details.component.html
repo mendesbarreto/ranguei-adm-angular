@@ -1,0 +1,38 @@
+<div *ngIf = "item">
+
+	<a [routerLink] = "['/items']">Go back </a>
+	<br>
+	<h2 class ="page header">{{item.name}}<small>{{ item.category }}</small></h2>
+	<div class = "row">
+		<div class = "col-md-4">
+			<img style="width:100%" class="thumbnail" src="{{item.image_firebase_url}}">
+		
+		</div>
+		
+		<div class = "col-md-8">
+			<ul class ="list-group">
+				<li class = "list-group-item">Description: {{item.description}}</li>
+				<li class = "list-group-item">Image: {{item.image}}</li>
+				<li class = "list-group-item">Price: {{item.price}}</li>
+				<li class = "list-group-item">Stock: {{item.stock}}</li>
+				<li class = "list-group-item">Available: {{item.available}}</li>
+				
+				
+			</ul>
+		
+		</div>
+		
+		<a class = "btn btn-default" [routerLink] = "['/edit-item/'+item.$key]">Edit Item</a>
+		<a class = "btn btn-warning" [routerLink] = "['/view-extra-food/'+item.$key]">View Extra </a>
+		
+		
+		
+		
+		<div style = "padding-top:10px;">
+			<a class = "btn btn-success" [routerLink] = "['/add-extra-food/'+item.$key]">Add Extra</a>
+			<a (click)="onItemDelete()" class = "btn btn-danger" >Delete Item</a>
+			
+		</div>
+	</div>
+
+</div>

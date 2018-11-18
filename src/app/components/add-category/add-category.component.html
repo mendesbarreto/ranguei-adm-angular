@@ -1,0 +1,39 @@
+<a [routerLink]="['/category']">Back</a>
+<br />
+<h2 class="page-header">Add Category</h2>
+
+
+<form (submit)="onCategoryAddSubmit()">
+  <div class="form-group">
+    <label>Title</label>
+    <input class="form-control" type="text" [(ngModel)]="cat_id" name="cat_id" required>
+  </div>
+  <div class="form-group">
+    <label>City</label>
+    <input class="form-control" type="text" [(ngModel)]="cat_name" name="cat_name" required>
+  </div>
+  
+   <div class="form-group">
+    <label>Restaurant</label>
+	
+	<select class="form-control" type="text"  [(ngModel)]="res_name" name="res_name" required>
+
+	
+     
+      <option *ngFor="let restaurant of restaurants" [value]="restaurant.$key">{{restaurant.title}}</option>
+	 
+   
+	</select>
+	
+
+	
+  </div>
+  
+  <div class="form-group">
+    <input id="image" name="image" [(ngModel)]="image" type="file" >
+  </div>
+  
+  <input type="submit" value="submit" class="btn btn-success">
+</form>
+
+

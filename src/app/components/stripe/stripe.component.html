@@ -1,0 +1,17 @@
+<a [routerLink]="['/settings']">Back</a>
+<br />
+<h2 class="page-header">Stripe Configuration</h2>
+<form (submit)="onStripeConfiguration()">
+  <div class="form-group">
+    <label>Stripe Publishable Key</label>
+    <input class="form-control" type="text" [(ngModel)]="publishable" name="publishable" required>
+  </div>
+
+  <div class="form-group">
+    <label>Stripe Secret Key</label>
+    <input class="form-control" type="text" [(ngModel)]="secret" name="secret" required>
+  </div>
+  
+  
+  <input type="submit" value="submit" class="btn btn-success">
+</form>

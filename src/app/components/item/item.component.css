@@ -1,0 +1,29 @@
+#filter{
+  padding: 8px;
+  background: #AED6F1;
+  border-radius: 0px;
+  line-height: 10px
+}
+
+#filter label{
+  padding: 8px;
+  width: 250px;
+  border: 0px solid #d4d4d4;
+  border-radius: 0px;
+  color: white;
+  float: right;
+}
+
+#filter input{
+  padding: 8px;
+  width: 300px;
+  border: 0px solid #d4d4d4;
+  border-radius: 0px;
+  float: right;
+}
+
+#filter:after{
+  content: "";
+  display: block;
+  clear: both;
+}

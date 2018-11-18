@@ -1,0 +1,28 @@
+<ul class = "list-group">
+
+
+		<form id = "filter">
+		
+		
+			<input type = "text" [(ngModel)]="term" name ="term"/>
+			<label>SEARCH BY CATEGORY NAME: </label>
+		
+			
+		</form>
+
+
+<div class="row" >
+		 <div class="col-xs-12 col-md-3" *ngFor="let category of categories | filterCategory:term">
+		  
+		  
+				
+				<a [routerLink]="['/category-details/'+category.$key]" style = "text-align: center;"><h4>{{category.cat_name}}</h4></a>
+				
+				<img style="width:100%;height:150px;" class="thumbnail" src="{{category.firebase_url}}">
+				
+		  </div>
+		  
+	</div>
+
+
+</ul>

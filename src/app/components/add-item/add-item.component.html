@@ -1,0 +1,60 @@
+<a [routerLink]="['/items']">Back</a>
+<br />
+<h2 class="page-header">Add Item</h2>
+<form (submit)="onItemAddSubmit()">
+  <div class="form-group">
+    <label>Name</label>
+    <input class="form-control" type="text" [(ngModel)]="name" name="name" required>
+  </div>
+  <div class="form-group">
+    <label>Category</label>
+    <input class="form-control" type="text" [(ngModel)]="category" name="category" required>
+  </div>
+  
+  <div class="form-group">
+    <label>Categories</label>
+	
+	<select class="form-control" type="text"  [(ngModel)]="categories" name="categories" required>
+
+	
+     
+      <option *ngFor="let category of categories" [value]="category.$key">{{category.cat_name}}</option>
+	 
+   
+	</select>
+	
+
+	
+  </div>
+  
+  
+  <div class="form-group">
+    <label>Description</label>
+    <input class="form-control" type="text" [(ngModel)]="description" name="description" required>
+  </div>
+  <div class="form-group">
+    <label>Available</label>
+    <input class="form-control" type="text" [(ngModel)]="available" name="available" required>
+  </div>
+  
+  <div class="form-group">
+    <input id="image" name="image" [(ngModel)]="image" type="file" >
+  </div>
+  
+  <div class="form-group">
+    <label>Price</label>
+    <input class="form-control" type="text" [(ngModel)]="price" name="price" required>
+  </div>
+  
+  <div class="form-group">
+    <label>Stock</label>
+    <input class="form-control" type="text" [(ngModel)]="stock" name="stock" required>
+  </div>
+  
+  <div class="form-group">
+    <label>Percent</label>
+    <input class="form-control" type="text" [(ngModel)]="percent" name="percent" required>
+  </div>
+  
+  <input type="submit" value="submit" class="btn btn-success">
+</form>
