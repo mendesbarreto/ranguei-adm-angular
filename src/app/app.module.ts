@@ -59,12 +59,12 @@ import { FilterItemPipe } from './pipes/itemPipe/filter-item.pipe';
 import { FilterOrderPipe } from './pipes/orderPipe/filter-order.pipe';
 
 export const firebaseConfig = {
-	apiKey: "AIzaSyBUScqVmMGH3llog55ujVcP2M6b7NLe-lA",
-    authDomain: "ranguei-f81c5.firebaseapp.com",
-    databaseURL: "https://ranguei-f81c5.firebaseio.com",
-    projectId: "ranguei-f81c5",
-    storageBucket: "ranguei-f81c5.appspot.com",
-    messagingSenderId: "77710659761"
+  apiKey: "AIzaSyDIrRFAN6TNXSIDYN8XhWUc_3FiVYK2hRI",
+  authDomain: "ranguei-f81c5.firebaseapp.com",
+  databaseURL: "https://ranguei-f81c5.firebaseio.com",
+  projectId: "ranguei-f81c5",
+  storageBucket: "ranguei-f81c5.appspot.com",
+  messagingSenderId: "77710659761"
 };
 
 const firebaseAuthConfig = {
